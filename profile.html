@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+<body>
+
+    <!-- User details -->
+    <div id="userDetails">
+        <h2>User Details</h2>
+        <ul>
+            <li><strong>User ID:</strong>1234esfdsg454452</li>
+            <li><strong>Name:</strong> John Doe</li>
+            <li><strong>Email:</strong> john@example.com</li>
+            <li><strong>Role:</strong> Administrator</li>
+        </ul>
+    </div>
+
+    <!-- Container for uploading documents -->
+    <div id="uploadContainer">
+        <h2>Upload Documents</h2>
+        <form action="http://localhost:3000/user/profile/upload" id="uploadForm" method="post" enctype="multipart/form-data">
+            <input type="file"  name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload File" name="submit" id="upload">
+        </form>
+    </div>
+
+    <!-- Container for displaying uploaded documents -->
+    <div id="documentsContainer">
+        <h2>Uploaded Documents</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Document Name</th>
+                </tr>
+            </thead>
+            <tbody id="documentList">
+                <!-- Uploaded documents will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript code to handle document display -->
+    <script src="profile.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

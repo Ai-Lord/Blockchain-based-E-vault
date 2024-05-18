@@ -1,0 +1,162 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/Images/profile1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/* User details styles */
+#userDetails {
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 40px;
+    height: 225px;
+    padding-left: 30px;
+    box-shadow: 1px 1px 20px black;
+    border-radius: 5px;
+}
+
+#userDetails h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    color: rgb(208, 221, 223);
+}
+
+#userDetails ul {
+    list-style: none;
+    padding: 0;
+}
+
+#userDetails li {
+    margin-bottom: 10px;
+}
+
+#userDetails li strong {
+    font-weight: bold;
+}
+
+/* Upload documents container styles */
+#uploadContainer {
+    width: 40%;
+    height: 200px;
+    margin-left: 40px;
+    margin-top: 50px;
+    padding-left: 30px;
+    box-shadow: 1px 1px 20px black;
+    border-radius: 5px;
+}
+
+#uploadContainer h2 {
+    padding-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(208, 221, 223);
+}
+
+#uploadForm {
+    margin-top: 10px;
+}
+
+#fileToUpload {
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+input::file-selector-button {
+    background-color: white;
+    padding: 3px;
+    border: 1.25px solid black;
+    border-radius: 4px;
+    color: black;
+    /* box-shadow: 1px 1px 5px black; */
+  }
+
+#upload{
+    position: relative;
+    top: 50px;
+    right: 260px;
+    padding: 10px;
+    background-color: rgb(5, 90, 164);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+}
+#upload:hover{
+    cursor:pointer;
+    background-color: rgb(10, 143, 167);
+}
+input::file-selector-button:hover{
+    cursor: pointer;
+    background-color: transparent;
+}
+/* Documents container styles */
+#documentsContainer {
+    position: absolute;
+    overflow-y: scroll;
+    height: 430px;
+    right: 50px;
+    top: 50px;
+    width: 40%;
+    padding: 40px;
+    padding-top: 5px;
+    box-shadow: 1px 1px 20px black;
+    border-radius: 5px;
+}
+
+#documentsContainer h2 {
+    margin-bottom: 30px;
+    color: rgb(208, 221, 223);
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    background-color: transparent;
+    color: black;
+    border: 1.5px solid black;
+    padding: 15px;
+    font-weight: 800;
+}
+
+td{
+    font-weight: 600;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+td:hover{
+    color: rgb(16, 157, 217);
+    cursor: pointer;
+}
+
+#documentList {
+    height: 200px;
+    overflow-y: auto;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #userDetails, #uploadContainer, #documentsContainer {
+        width: 100%;
+        margin: 10px;
+    }
+}

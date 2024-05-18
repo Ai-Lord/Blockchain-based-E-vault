@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, 
+						initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet"
+		href="home.css">
+</head>
+
+<body>
+	<header>
+		<div class="heading">
+		<h1 class="heading1">Blockchain Based</h1>
+		<h1 class="heading2">E-Vault </h1>
+		<p>E-Vault is a blockchain-based digital storage solution that offers top-tier security for your sensitive data. With advanced encryption and decentralized technology, E-Vault ensures your documents and digital assets are protected and easily accessible, providing you with complete control and peace of mind. Experience the future of secure digital storage with E-Vault.</p>
+		</div>
+	</header>
+
+	<!-- container div -->
+	<div class="container">
+
+		<!-- upper button section to select
+			the login or signup form -->
+		<div class="slider"></div>
+		<div class="btn">
+			<button class="login">Login</button>
+			<button class="signup">Signup</button>
+		</div>
+
+		<!-- Form section that contains the
+			login and the signup form -->
+		<div class="form-section">
+
+			<!-- login form -->
+			<div class="login-box">
+				<input type="email"
+					class="email ele"
+					placeholder="youremail@email.com">
+				<input type="password"
+					class="password ele"
+					placeholder="password">
+				<button id="submit" class="clkbtn">Submit</button>
+			</div>
+
+			<!-- signup form -->
+			<div class="signup-box">
+				<input type="text"
+					class="name ele"
+					placeholder="Enter your name">
+				<input type="email"
+					class="email ele"
+					id="email"
+					placeholder="youremail@email.com">
+				<input type="text"
+				    id="password"
+					class="password ele"
+					placeholder="password">
+				<input list="roles" name="role" class="role ele" placeholder="role">
+                    <datalist id="roles">
+					  <option value="client">
+					  <option value="lawyer">
+					  <option value="judge">
+					</datalist>
+				<button id="register" class="clkbtn">Register</button>
+			</div>
+		</div>
+	</div>
+	<script src="home.js"></script>
+</body>
+</html>
