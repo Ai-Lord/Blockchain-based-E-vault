@@ -1,4 +1,5 @@
 // backend file (server.js)
+require('dotenv').config();
 
 const express = require('express');
 const fs = require('fs');
@@ -8,19 +9,29 @@ const User = require('./models/user');
 const File = require('./models/file');
 const multer = require('multer');
 const {Web3} = require('web3'); // Import Web3 library
+const ganache = require('ganache');
 
 const router = express.Router();
 const uploadDirectory = path.join(__dirname, 'uploads');
 
 // Set up Web3 provider (Ganache)
-const web3 = new Web3('http://127.0.0.1:7545');
+const web3 = new Web3(ganache.provider(), null, { transactionConfirmationBlocks: 1 });
 
 // Load contract ABI and address
 const contractAbi = require('./build/contracts/DocumentRegistry.json').abi;
-const contractAddress = '0xE77e0cEfCE7f7DF3d3Cb7bd09B7a3D540776E4Ee'; // Update with your contract address
+const contractAddress = process.env.CONTRACT_ADDRESS; // Update with your contract address
 
 // Get contract instance
 const contract = new web3.eth.Contract(contractAbi, contractAddress);
+
+// Get list of accounts from Ganache
+let accounts;
+web3.eth.getAccounts().then(acc => {
+    accounts = acc;
+    console.log('Accounts:', accounts);
+}).catch(err => {
+    console.error('Error fetching accounts:', err);
+});
 
 // Check if the upload directory exists, create it if not
 if (!fs.existsSync(uploadDirectory)) {
@@ -61,7 +72,9 @@ router.post('/upload', jwtAuthMiddleware, async (req, res) => {
 
             // Add document hash to the blockchain
             const docHash = web3.utils.sha3(filename);
-            contract.methods.addDocument(docHash).send({ from: contractAddress })
+            const senderAddress = accounts[0]; // Use the first account from Ganache
+            
+            contract.methods.addDocument(docHash).send({ from: senderAddress })
                 .on('receipt', async () => {
                     const newFile = new File({
                         filename: filename,

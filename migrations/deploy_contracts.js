@@ -3,5 +3,7 @@
 const DocumentVerification = artifacts.require("DocumentRegistry");
 
 module.exports = function(deployer) {
-  deployer.deploy(DocumentVerification);
+  deployer.deploy(DocumentVerification).then((instance) => {
+    console.log("Contract deployed to address: ", instance.address);
+  });
 };
