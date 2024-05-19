@@ -1,8 +1,0 @@
-{"name":"Alice",
- "age" : 20,
- "work": "chef",
- "mobile": "123-456-7890",
- "email": "alice@example.com",
- "address": "123 main st, city",
- "salary": 6000
-}
