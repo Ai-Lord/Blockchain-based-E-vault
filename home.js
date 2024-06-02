@@ -18,7 +18,7 @@ const form2 = {
 
 form2.register.addEventListener("click", (e)=> {
 	e.preventDefault();
-	const signup = 'http://localhost:3000/user/signup';
+	const signup = 'https://blockchain-based-docvault.netlify.app/user/signup';
 	//window.location.replace("www.google.com")
 	fetch(signup, {
 		  method: "POST",
@@ -52,7 +52,7 @@ const form = {
 
 form.submit.addEventListener("click", (e)=> {
 	e.preventDefault();
-	const login = 'http://localhost:3000/user/login';
+	const login = 'https://blockchain-based-docvault.netlify.app/user/login';
 	//window.location.replace("www.google.com")
 	fetch(login, {
 		  method: "POST",
